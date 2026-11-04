@@ -1,0 +1,36 @@
+{
+  "name": "realmspace",
+  "productName": "RealmSpace",
+  "version": "0.1.0",
+  "description": "A campaign manager for Dungeons & Dragons game masters.",
+  "main": "main.js",
+  "author": "Kyle Schumacher-Picone",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.realmspace.app",
+    "productName": "RealmSpace",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
